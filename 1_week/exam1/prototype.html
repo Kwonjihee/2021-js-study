@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>exam</title>
+<link rel="stylesheet" href="common.css" />
+<style>
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	/* body {font-family: "Nanum Gothic", sans-serif;} */
+	h1 {padding-bottom:5px; font-size:30px; font-weight:900; color:#333; border-bottom:1px solid #eee;}
+	h2 {margin-top:30px; font-size:18px; font-weight:900; color:#4c4c4c;}
+	ul {margin-top:10px;}
+	pre {margin-top:20px; padding:15px 20px; border-radius:5px; background-color:#efefef;}
+</style>
+</head>
+<body>
+<!-- wrapper [s] -->
+<div id="wrapper">
+	<!-- header [s] -->
+	<div id="header">
+	</div>
+	<!-- header [e] -->
+	<hr />
+	<!-- container [s] -->
+	<div id="container">
+		<h1>Prototype</h1>
+
+		<div class="exam exam1">
+			<h2>Array.join([separator])</h2>
+			<ul>
+				<li>- 배열의 모든 요소를 연결해 하나의 문자열로 만든다.</li>
+				<li>
+					- separator : 배열의 각 요소를 구분할 문자열을 지정한다.
+				</li>
+			</ul>
+			<pre>
+var arr = [A, B, C];
+var arr2 = [];
+</pre>
+
+			<div class="test">
+				<p>arr.join()</p>
+				<p>result : <span class="result"></span></p>
+				<p>- separator를 생략하면 배열의 요소들이 쉼표로 구분된다.</p>
+			</div>
+			<div class="test">
+				<p>arr.join(' ')</p>
+				<p>result : <span class="result"></span></p>
+				<p>- separator가 빈 문자열이라면 모든 요소들이 사이에 아무 문자도 없이 연결된다.</p>
+			</div>
+			<div class="test">
+				<p>arr.join('/')</p>
+				<p>result : <span class="result"></span></p>
+			</div>
+			<div class="test">
+				<p>arr2.join()</p>
+				<p>result : <span class="result"></span></p>
+				<p>- 만약 배열에 length가 0이라면 빈 문자열을 반환한다.</p>
+			</div>
+		</div>
+	</div>
+	<!-- container [e] -->
+	<hr />
+	<!-- footer [s] -->
+	<div id="footer">
+	</div>
+	<!-- footer [e] -->
+</div>
+<!-- wrapper [e] -->
+</body>
+</html>
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!--jQuery library-->
+<script>
+// jQuery code
+$(function(){
+
+	var exam1 = $('.exam1');
+	var exam1_arr = ['A', 'B', 'C'];
+
+	var exam1_test1 = exam1_arr.join();
+	exam1.find('.test:eq(0) .result').append(exam1_test1);
+	var exam1_test2 = exam1_arr.join(' ');
+	 exam1.find('.test:eq(1) .result').append(exam1_test2);
+	var exam1_test3 = exam1_arr.join('/');
+	 exam1.find('.test:eq(2) .result').append(exam1_test3);
+
+	var exam1_arr2 = [];
+	var exam1_test4 = exam2_arr.join();
+	exam1.find('.test:eq3 .result').append(exam1_test4);
+
+	// exam1_result;
+	// console.log(exam1_arr.join());
+	// console.log(exam1_arr.join('B'));
+	// .
+	// .
+	// examObj1.find('button').on('click', function(){
+	// 	examObj1.find('.exam_q :first').css('background','yellow');
+	// 	// examObj1.find('.exam_q').children().first().css('background','yellow');
+	// });
+});
+</script>
