@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <title>exam</title>
 <link rel="stylesheet" href="common.css" />
-<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> jQuery library-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!--jQuery library-->
 <script>
 // jQuery default
 // $(document).ready(function(){
@@ -17,23 +17,66 @@
 
 
 // jQuery code
-// $(function(){
-// 	var examObj1 = $('.exam_wrap:eq(0)');
-// 	examObj1.find('button').on('click', function(){
-// 		examObj1.find('.exam_q *').css('background','yellow');
-// 	});
-// });
+$(function(){
+	// Exam1. 모든 Elements를 선택
+	var examObj1 = $('.exam_wrap:eq(0)');
+	examObj1.find('button').on('click', function(){
+		examObj1.find('.exam_q *').css('background','yellow');
+	});
+
+	// Exam2. 태그명이 span 인 Elements를 선택
+	var examObj2 = $('.exam_wrap:eq(1)');
+	examObj2.find('button').on('click', function(){
+		examObj2.find('.exam_q span').css('background','yellow');
+	});
+
+	// Exam3. em의 자손이면서 태그명이 span 인 Elements를 선택
+	var examObj3 = $('.exam_wrap:eq(2)');
+	examObj3.find('button').on('click', function(){
+		examObj3.find('.exam_q em span').css('background','yellow');
+	});
+
+	// Exam4. 부모(.exam_q)의 바로 아래 자식이면서 태그명이 span 인 Elements를 선택
+	var examObj4 = $('.exam_wrap:eq(3)');
+	examObj4.find('button').on('click', function(){
+		examObj4.find('.exam_q > span').css('background','yellow');
+	});
+
+	// Exam5. div의 형제 Elements이면서, 바로 다음에 나오는 p Elements를 선택
+	var examObj5 = $('.exam_wrap:eq(4)');
+	examObj5.find('button').on('click', function(){
+		examObj5.find('.exam_q div + p').css('background','yellow');
+	});
+
+	// Exam6. div의 형제 Elements이면서, 다음에 나오는 모든 span Elements를 선택
+	var examObj6 = $('.exam_wrap:eq(5)');
+	examObj6.find('button').on('click', function(){
+		examObj6.find('.exam_q div ~ span').css('background','yellow');
+	});
+
+	// Exam7. 클래스명이 active인 모든 Elements를 선택
+	var examObj7 = $('.exam_wrap:eq(6)');
+	examObj7.find('button').on('click', function(){
+		examObj7.find('.exam_q .active').css('background','yellow');
+	});
+
+	// Exam8. 아이디명이 active인 Element를 선택
+	var examObj8 = $('.exam_wrap:eq(7)');
+	examObj8.find('button').on('click', function(){
+		examObj8.find('#active').css('background','yellow');
+	});
+});
 
 // javascript code
-window.onload = function(){
-	var examObj1 = document.getElementsByClassName('exam_wrap')[0];
-	examObj1.getElementsByTagName('button')[0].onclick = function(){
-		var examChild = examObj1.getElementsByClassName('exam_q')[0].querySelectorAll('*');
-		for(var i = 0; i < examChild.length; i++){
-			examChild[i].style.backgroundColor = 'yellow';
-		}
-	};
-}
+// window.onload = function(){
+// 	var examObj1 = document.getElementsByClassName('exam_wrap')[0];
+// 	examObj1.getElementsByTagName('button')[0].onclick = function(){
+// 		var examChild = examObj1.getElementsByClassName('exam_q')[0].querySelectorAll('*');
+// 		for(var i = 0; i < examChild.length; i++){
+// 			examChild[i].style.backgroundColor = 'yellow';
+// 		}
+// 	};
+// }
 </script>
 </head>
 <body>

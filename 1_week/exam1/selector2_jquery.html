@@ -5,6 +5,64 @@
 <meta charset="utf-8">
 <title>exam</title>
 <link rel="stylesheet" href="common.css" />
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!--jQuery library-->
+<script>
+// jQuery code
+$(function(){
+
+	// Exam1. 태그 순서가 첫번째인 모든 Elements를 선택
+	var examObj1 = $('.exam_wrap:eq(0)');
+	examObj1.find('button').on('click', function(){
+		examObj1.find('.exam_q :first').css('background','yellow');
+		// examObj1.find('.exam_q').children().first().css('background','yellow');
+	});
+
+	// // Exam2. 태그 순서가 마지막인 모든 Elements를 선택
+	var examObj2 = $('.exam_wrap:eq(1)');
+	examObj2.find('button').on('click', function(){
+		examObj2.find('.exam_q :last').css('background','yellow');
+		// examObj2.find('.exam_q *').last().css('background','yellow');
+	});
+
+	// Exam3. 첫번째 자식 Element를 선택
+	var examObj3 = $('.exam_wrap:eq(2)');
+	examObj3.find('button').on('click', function(){
+		examObj3.find('.exam_q :first-child').css('background','yellow');
+	});
+
+	// Exam4. 마지막 자식 Element를 선택
+	var examObj4 = $('.exam_wrap:eq(3)');
+	examObj4.find('button').on('click', function(){
+		examObj4.find('.exam_q :last-child').css('background','yellow');
+	});
+
+	// Exam5. 태그 순서가 2번째인 자식 Element를 선택
+	var examObj5 = $('.exam_wrap:eq(4)');
+	examObj5.find('button').on('click', function(){
+		examObj5.find('.exam_q :nth-child(2)').css('background','yellow');
+	});
+
+	// Exam6. 태그 순서가 3번째인 Element를 선택
+	var examObj6 = $('.exam_wrap:eq(5)');
+	examObj6.find('button').on('click', function(){
+		examObj6.find('.exam_q :eq(2)').css('background','yellow');
+		// examObj6.find('.exam_q').children().eq(2).css('background','yellow');
+	});
+
+	// Exam7. 태그 순서가 3번째인 Element 이후의 Elements를 선택
+	var examObj7 = $('.exam_wrap:eq(6)');
+	examObj7.find('button').on('click', function(){
+		examObj7.find('.exam_q :gt(2)').css('background','yellow');
+		// examObj7.find('.exam_q').children().eq(2).nextAll().css('background','yellow');
+	});
+
+	// Exam8. 태그 순서가 3번째인 Element 이전의 Elements를 선택
+	var examObj8 = $('.exam_wrap:eq(7)');
+	examObj8.find('button').on('click', function(){
+		examObj8.find('.exam_q :lt(2)').css('background','yellow');
+	});
+});
+</script>
 </head>
 <body>
 <!-- wrapper [s] -->
