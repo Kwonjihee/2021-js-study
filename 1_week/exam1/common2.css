@@ -10,7 +10,10 @@ hr{display:none}
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /* body {font-family: "Nanum Gothic", sans-serif;} */
 #container {
-    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    box-sizing: border-box;
 }
 h1 {
     padding-bottom: 7px;
