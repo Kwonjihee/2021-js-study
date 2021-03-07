@@ -19,6 +19,12 @@ h1 {
     font-size: 30px;
     color: #333;
 }
+h1 + .section {
+    margin-top: 20px;
+}
+.section {
+    margin-top: 200px;
+}
 .exam {
     margin-top: 100px;
 }
@@ -62,15 +68,23 @@ li {
     content: '⦁';
 }
 .result {
-    display: inline-block;
     margin-top: 5px;
-    min-height: 27px;
+}
+.result p {
+    margin-top: 3px;
+}
+.result p:first-child {
+    margin-top: 0;
+}
+.result span {
+    display: inline-block;
+    background-color: #f5f0f0;
     padding: 3px 5px;
     border-radius: 5px;
-    background-color: rgb(245 240 240);
     box-sizing: border-box;
+    min-height: 27px;
 }
-.result:empty {
+.result span:empty {
     min-width: 48px;
 }
 .explain {
