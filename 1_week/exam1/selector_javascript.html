@@ -7,35 +7,9 @@
 <link rel="stylesheet" href="common.css" />
 <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> jQuery library-->
 <script>
-// jQuery default
-// $(document).ready(function(){
-
-// });
-// $(function(){
-
-// });
-
-
-// jQuery code
-// $(function(){
-// 	var examObj1 = $('.exam_wrap:eq(0)');
-// 	examObj1.find('button').on('click', function(){
-// 		examObj1.find('.exam_q *').css('background','yellow');
-// 	});
-// });
-
-// javascript code
-// window.onload = function(){
-// 	var examObj1 = document.getElementsByClassName('exam_wrap')[0];
-// 	examObj1.getElementsByTagName('button')[0].onclick = function(){
-// 		var examChild = examObj1.getElementsByClassName('exam_q')[0].querySelectorAll('*');
-// 		for(var i = 0; i < examChild.length; i++){
-// 			examChild[i].style.backgroundColor = 'yellow';
-// 		}
-// 	};
-// }
 
 window.onload = function() {
+
 	// Exam1. 모든 Elements를 선택
 	var examObj1 = document.getElementsByClassName('exam_wrap')[0];
 	examObj1.getElementsByTagName('button')[0].onclick = function() {
@@ -48,8 +22,8 @@ window.onload = function() {
 	// Exam2. 태그명이 span 인 Elements를 선택
 	var examObj2 = document.getElementsByClassName('exam_wrap')[1];
 	examObj2.getElementsByTagName('button')[0].onclick = function() {
-		// var examChild = examObj2.getElementsByClassName('exam_q')[0].getElementsByTagName('span');
-		var examChild = examObj2.getElementsByClassName('exam_q')[0].querySelectorAll('span');
+		// var examChild = examObj2.getElementsByClassName('exam_q')[0].querySelectorAll('span');
+		var examChild = examObj2.getElementsByClassName('exam_q')[0].getElementsByTagName('span');
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
 		}
@@ -58,17 +32,17 @@ window.onload = function() {
 	// Exam3. em의 자손이면서 태그명이 span 인 Elements를 선택
 	var examObj3 = document.getElementsByClassName('exam_wrap')[2];
 	examObj3.getElementsByTagName('button')[0].onclick = function() {
-		// var examChild = examObj3.getElementsByClassName('exam_q')[0].getElementsByTagName('em');
-		// for(var i = 0 ; i < examChild.length ; i++) {
-		// 	examChild2 = examChild[i].getElementsByTagName('span');
-		// 	for(var j = 0 ; j < examChild2.length ; i++) {
-		// 		examChild2[j].style.backgroundColor = 'yellow';
-		// 	}
-		// }
 		var examChild = examObj3.getElementsByClassName('exam_q')[0].querySelectorAll('em span');
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
 		}
+		// var examChild = examObj3.getElementsByClassName('exam_q')[0].getElementsByTagName('em');
+		// for(var i = 0 ; i < examChild.length ; i++) {
+		// 	examEmChild = examChild[i].getElementsByTagName('span');
+		// 	for(var j = 0 ; j < examEmChild.length ; j++) {
+		// 		examEmChild[j].style.backgroundColor = 'yellow';
+		// 	}
+		// }
 	}
 
 	// Exam4. 부모(.exam_q)의 바로 아래 자식이면서 태그명이 span 인 Elements를 선택
@@ -78,7 +52,17 @@ window.onload = function() {
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
 		}
+	// 	var examChild = examObj4.getElementsByClassName('exam_q')[0].children;
+	// 	for(var i = 0 ; i < examChild.length ; i++) {
+	// 		console.log(examChild[i]);
+	// 		// if(examChild[i])
+	// 		// var examSpanChild = examChild[i].getElementsByTagName('span');
+	// 		// for(var j = 0 ; j < examSpanChild.length ; j++) {
+	// 		// 	examSpanChild[j].style.backgroundColor = 'yellow';
+	// 		// }
+	// 	}
 	}
+	//책갈피
 
 	// Exam5. div의 형제 Elements이면서, 바로 다음에 나오는 p Elements를 선택
 	var examObj5 = document.getElementsByClassName('exam_wrap')[4];
@@ -134,7 +118,7 @@ window.onload = function() {
 			<h1>Q. <strong class="point">모든 Elements</strong>를 선택</h1>
 			<div class="exam_q"><!-- 부모 -->
 				<div>div</div>
-				<p>p</p>
+			
 				<span>span</span>
 				<em>em<span>span</span></em>
 			</div>
