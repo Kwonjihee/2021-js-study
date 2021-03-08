@@ -12,18 +12,37 @@ hr{display:none}
 #container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: 20px 20px 100px;
     box-sizing: border-box;
 }
 h1 {
-    padding-bottom: 7px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #eee;
     font-weight: 900;
-    font-size: 30px;
-    color: #333;
+    font-size: 32px;
+    color: #111;
+}
+.nav {
+    margin-top: 20px;
+}
+.nav dt {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 18px;;
+}
+.nav dt:first-child {
+    margin-top: 0;
+}
+.nav dd {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 13px;
 }
 h1 + .section {
     margin-top: 20px;
+}
+.nav + .section  {
+    margin-top: 50px;
 }
 .section {
     margin-top: 200px;
@@ -35,22 +54,28 @@ h2 + .exam {
     margin-top: 10px;
 }
 h2 {
-    font-size: 27px;
+    font-size: 29px;
+    color: #333;
 }
 h3 {
     font-weight: 900;
-    font-size: 18px;
-    color: #4c4c4c;
+    font-size: 20px;
 }
 ul {
     margin-top: 15px;
 }
 ul ul {
-    margin: 0 0 0 20px;
-    font-size: 0.79em;
+    margin-top: 5px;
+    font-size: 0.8em;
 }
 li {
+    padding-left: 20px;
     list-style: none;
+}
+li:before {
+    display: inline-block;
+    text-indent: -13px;
+    content: '-';
 }
 .pre {
     margin-top: 20px;
@@ -59,12 +84,12 @@ li {
     border-radius: 5px;
     background-color: #fefefe;
 }
-.test {
+.examBox {
     position: relative;
     margin: 15px 0 0 10px;
     padding-left: 15px;
 }
-.test:before {
+.examBox:before {
     position: absolute;
     top: 0;
     left: 0;
@@ -98,5 +123,9 @@ li {
 .point {
     background-color: #ffe2e2;
     color: #b05d5d;
+}
+.reference {
+    font-size: 11px;
+    color: #6d795f;
 }
 
