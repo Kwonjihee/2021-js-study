@@ -5,17 +5,9 @@
 <meta charset="utf-8">
 <title>exam</title>
 <link rel="stylesheet" href="common.css" />
-<script src="http://code.jquery.com/jquery-latest.js"></script> <!--jQuery library-->
+<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> --><!--jQuery library-->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> <!--jQuery library-->
 <script>
-// jQuery default
-// $(document).ready(function(){
-
-// });
-// $(function(){
-
-// });
-
-
 // jQuery code
 $(function(){
 	// Exam1. 모든 Elements를 선택
@@ -27,12 +19,14 @@ $(function(){
 	// Exam2. 태그명이 span 인 Elements를 선택
 	var examObj2 = $('.exam_wrap:eq(1)');
 	examObj2.find('button').on('click', function(){
+		// examObj2.find('.exam_q').children('span').css('background','yellow');
 		examObj2.find('.exam_q span').css('background','yellow');
 	});
 
 	// Exam3. em의 자손이면서 태그명이 span 인 Elements를 선택
 	var examObj3 = $('.exam_wrap:eq(2)');
 	examObj3.find('button').on('click', function(){
+		// examObj3.find('.exam_q').children('em').children('span').css('background','yellow');
 		examObj3.find('.exam_q em span').css('background','yellow');
 	});
 
@@ -51,6 +45,8 @@ $(function(){
 	// Exam6. div의 형제 Elements이면서, 다음에 나오는 모든 span Elements를 선택
 	var examObj6 = $('.exam_wrap:eq(5)');
 	examObj6.find('button').on('click', function(){
+		// examObj6.find('.exam_q').children().nextUntil('div', 'span').css('background','yellow');
+		// examObj6.find('.exam_q').children('div').nextAll('span').css('background','yellow');
 		examObj6.find('.exam_q div ~ span').css('background','yellow');
 	});
 
@@ -66,17 +62,6 @@ $(function(){
 		examObj8.find('#active').css('background','yellow');
 	});
 });
-
-// javascript code
-// window.onload = function(){
-// 	var examObj1 = document.getElementsByClassName('exam_wrap')[0];
-// 	examObj1.getElementsByTagName('button')[0].onclick = function(){
-// 		var examChild = examObj1.getElementsByClassName('exam_q')[0].querySelectorAll('*');
-// 		for(var i = 0; i < examChild.length; i++){
-// 			examChild[i].style.backgroundColor = 'yellow';
-// 		}
-// 	};
-// }
 </script>
 </head>
 <body>

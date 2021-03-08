@@ -12,10 +12,9 @@ window.onload = function() {
 	// Exam1. 태그 순서가 첫번째인 모든 Elements를 선택
 	var examObj1 = document.getElementsByClassName('exam_wrap')[0];
 	examObj1.getElementsByTagName('button')[0].onclick = function() {
-		// var examChild = examObj1.getElementsByClassName('exam_q')[0].firstElementChild;
-		var examChild = examObj1.getElementsByClassName('exam_q')[0].querySelectorAll('*')[0];
+		// var examChild = examObj1.getElementsByClassName('exam_q')[0].querySelectorAll('*')[0];
+		var examChild = examObj1.getElementsByClassName('exam_q')[0].firstElementChild;
 		examChild.style.backgroundColor = 'yellow';
-		console.log(examChild);
 	}
 	
 	// // Exam2. 태그 순서가 마지막인 모든 Elements를 선택
@@ -56,16 +55,18 @@ window.onload = function() {
 	// Exam6. 태그 순서가 3번째인 Element를 선택
 	var examObj6 = document.getElementsByClassName('exam_wrap')[5];
 	examObj6.getElementsByTagName('button')[0].onclick = function() {
-		// var examChild = examObj6.getElementsByClassName('exam_q')[0].children[2];
-		var examChild = examObj6.getElementsByClassName('exam_q')[0].querySelectorAll('*')[2];
+		var targetNum = 3;
+		// var examChild = examObj6.getElementsByClassName('exam_q')[0].children[targetNum-1];
+		var examChild = examObj6.getElementsByClassName('exam_q')[0].querySelectorAll('*')[targetNum-1];
 		examChild.style.backgroundColor = 'yellow';
 	}
 
 	// Exam7. 태그 순서가 3번째인 Element 이후의 Elements를 선택
 	var examObj7 = document.getElementsByClassName('exam_wrap')[6];
 	examObj7.getElementsByTagName('button')[0].onclick = function() {
+		var targetNum = 3;
 		var examChild = examObj7.getElementsByClassName('exam_q')[0].querySelectorAll('*');
-		for(var i = 3 ; i < examChild.length ; i++) {
+		for(var i = targetNum ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
 		}
 	}
@@ -73,8 +74,9 @@ window.onload = function() {
 	// Exam8. 태그 순서가 3번째인 Element 이전의 Elements를 선택
 	var examObj8 = document.getElementsByClassName('exam_wrap')[7];
 	examObj8.getElementsByTagName('button')[0].onclick = function() {
+		var targetNum = 3;
 		var examChild = examObj8.getElementsByClassName('exam_q')[0].children;
-		for(var i = 0; i < 2 ; i++) {
+		for(var i = 0; i < targetNum-1 ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
 		}
 	}

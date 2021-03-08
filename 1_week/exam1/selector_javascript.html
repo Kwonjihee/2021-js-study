@@ -22,8 +22,8 @@ window.onload = function() {
 	// Exam2. 태그명이 span 인 Elements를 선택
 	var examObj2 = document.getElementsByClassName('exam_wrap')[1];
 	examObj2.getElementsByTagName('button')[0].onclick = function() {
-		// var examChild = examObj2.getElementsByClassName('exam_q')[0].querySelectorAll('span');
-		var examChild = examObj2.getElementsByClassName('exam_q')[0].getElementsByTagName('span');
+		// var examChild = examObj2.getElementsByClassName('exam_q')[0].getElementsByTagName('span');
+		var examChild = examObj2.getElementsByClassName('exam_q')[0].querySelectorAll('span');
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
 		}
@@ -32,10 +32,6 @@ window.onload = function() {
 	// Exam3. em의 자손이면서 태그명이 span 인 Elements를 선택
 	var examObj3 = document.getElementsByClassName('exam_wrap')[2];
 	examObj3.getElementsByTagName('button')[0].onclick = function() {
-		var examChild = examObj3.getElementsByClassName('exam_q')[0].querySelectorAll('em span');
-		for(var i = 0 ; i < examChild.length ; i++) {
-			examChild[i].style.backgroundColor = 'yellow';
-		}
 		// var examChild = examObj3.getElementsByClassName('exam_q')[0].getElementsByTagName('em');
 		// for(var i = 0 ; i < examChild.length ; i++) {
 		// 	examEmChild = examChild[i].getElementsByTagName('span');
@@ -43,30 +39,33 @@ window.onload = function() {
 		// 		examEmChild[j].style.backgroundColor = 'yellow';
 		// 	}
 		// }
+		var examChild = examObj3.getElementsByClassName('exam_q')[0].querySelectorAll('em span');
+		for(var i = 0 ; i < examChild.length ; i++) {
+			examChild[i].style.backgroundColor = 'yellow';
+		}
 	}
 
 	// Exam4. 부모(.exam_q)의 바로 아래 자식이면서 태그명이 span 인 Elements를 선택
 	var examObj4 = document.getElementsByClassName('exam_wrap')[3];
 	examObj4.getElementsByTagName('button')[0].onclick = function() {
-		var examChild = examObj4.getElementsByClassName('exam_q')[0].querySelectorAll('.exam_q > span');
+		// var examChild = examObj4.getElementsByClassName('exam_q')[0].children;
+		// for (var i = 0 ; i < examChild.length ; i++) {
+		// 	if(examChild[i].nodeName.toLowerCase() === 'span') examChild[i].style.backgroundColor = 'yellow';
+		// }
+		var examChild = examObj4.querySelectorAll('.exam_q > span');
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
 		}
-	// 	var examChild = examObj4.getElementsByClassName('exam_q')[0].children;
-	// 	for(var i = 0 ; i < examChild.length ; i++) {
-	// 		console.log(examChild[i]);
-	// 		// if(examChild[i])
-	// 		// var examSpanChild = examChild[i].getElementsByTagName('span');
-	// 		// for(var j = 0 ; j < examSpanChild.length ; j++) {
-	// 		// 	examSpanChild[j].style.backgroundColor = 'yellow';
-	// 		// }
-	// 	}
 	}
 	//책갈피
 
 	// Exam5. div의 형제 Elements이면서, 바로 다음에 나오는 p Elements를 선택
 	var examObj5 = document.getElementsByClassName('exam_wrap')[4];
 	examObj5.getElementsByTagName('button')[0].onclick = function() {
+		// var examChild = examObj5.getElementsByClassName('exam_q')[0].children;
+		// for(var i = 0 ; i < examChild.length ; i++) {
+		// 	if ((examChild[i].nodeName.toLowerCase() === 'div') && (examChild[i].nextElementSibling.nodeName.toLowerCase() === 'p')) examChild[i+1].style.backgroundColor = 'yellow';
+		// }
 		var examChild = examObj5.getElementsByClassName('exam_q')[0].querySelectorAll('div + p');
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
@@ -76,6 +75,12 @@ window.onload = function() {
 	// Exam6. div의 형제 Elements이면서, 다음에 나오는 모든 span Elements를 선택
 	var examObj6 = document.getElementsByClassName('exam_wrap')[5];
 	examObj6.getElementsByTagName('button')[0].onclick = function() {
+		// var examChild = examObj6.getElementsByClassName('exam_q')[0].children;
+		// var currCheck = false;
+		// for (var i = 0 ; i < examChild.length ; i++) {
+		// 	if (examChild[i].nodeName.toLowerCase() === 'div') currCheck = true;
+		// 	if (currCheck === true && examChild[i].nodeName.toLowerCase() === 'span') examChild[i].style.backgroundColor = 'yellow';;
+		// }
 		var examChild = examObj6.getElementsByClassName('exam_q')[0].querySelectorAll('div ~ span');
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
@@ -87,7 +92,6 @@ window.onload = function() {
 	examObj7.getElementsByTagName('button')[0].onclick = function() {
 		// var examChild = examObj7.getElementsByClassName('exam_q')[0].getElementsByClassName('active');
 		var examChild = examObj7.getElementsByClassName('exam_q')[0].querySelectorAll('.active');
-		console.log(examChild);
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
 		}
@@ -96,6 +100,8 @@ window.onload = function() {
 	// Exam8. 아이디명이 active인 Element를 선택
 	var examObj8 = document.getElementsByClassName('exam_wrap')[7];
 	examObj8.getElementsByTagName('button')[0].onclick = function() {
+		// var examChild = document.getElementById('active');
+		// examChild.style.backgroundColor = 'yellow';
 		var examChild = examObj8.getElementsByClassName('exam_q')[0].querySelectorAll('#active');
 		for(var i = 0 ; i < examChild.length ; i++) {
 			examChild[i].style.backgroundColor = 'yellow';
