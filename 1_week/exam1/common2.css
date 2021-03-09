@@ -11,8 +11,9 @@ hr{display:none}
 /* body {font-family: "Nanum Gothic", sans-serif;} */
 #container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px 20px 100px;
+    padding: 20px 270px 100px 20px;
     box-sizing: border-box;
 }
 h1 {
@@ -23,10 +24,21 @@ h1 {
     color: #111;
 }
 .nav {
-    margin-top: 20px;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    right:0;
+    bottom: 0;
+    background-color: white;
+    border-left: 1px solid #e8e8e8;
+}
+.nav dl {
+    width: 250px;
+    padding: 40px 50px;
+    box-sizing: border-box;
 }
 .nav dt {
-    margin-top: 15px;
+    margin-top: 30px;
     font-weight: bold;
     font-size: 18px;;
 }
@@ -37,6 +49,14 @@ h1 {
     margin-top: 5px;
     margin-left: 10px;
     font-size: 13px;
+}
+.nav a {
+    color: #555;
+    text-decoration: none;
+}
+.nav a:hover,
+.nav a:focus {
+    text-decoration: underline;
 }
 h1 + .section {
     margin-top: 20px;
